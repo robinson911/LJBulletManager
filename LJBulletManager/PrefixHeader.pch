@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  LJBulletManager
+//
+//  Created by 孙伟伟 on 2017/10/13.
+//  Copyright © 2017年 孙伟伟. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <Foundation/Foundation.h>
+#import "LJBulletDefine.h"
+#import <libkern/OSAtomic.h>
+
+static inline void MainThreadAsync(void (^block)()) {
+    if ([NSThread isMainThread]) block();
+    else dispatch_async(dispatch_get_main_queue(), block);
+}
+
+static inline void GlobalThreadAsync(void (^block)()) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+}
+
+
+//字体
+#define loadFont(size)  [UIFont systemFontOfSize:size]
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#endif /* PrefixHeader_pch */
