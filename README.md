@@ -18,16 +18,13 @@ ios 弹幕
 
 3.当前一个弹幕的运行时间大于0时，我们判断前一个弹幕是否完全进入屏幕，倘如未完全进入屏幕的话，判断下一个轨道（从1开始）。
 具体判断代码如下：
-
-
+![image](https://github.com/robinson911/LJBulletManager/blob/master/2.png)
 
 我们假定弹幕的运行时间是5s，弹幕向前走一步，时间减少0.2s。
 
 二.弹幕重用，避免内存急剧增大
-
-
-
-
+![image](https://github.com/robinson911/LJBulletManager/blob/master/4.png)
+![image](https://github.com/robinson911/LJBulletManager/blob/master/6.png)
 
 三. demo截图
-
+![image](https://github.com/robinson911/LJBulletManager/blob/master/8.png)
